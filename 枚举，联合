@@ -1,0 +1,112 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+# include<stdio.h>
+# include<stddef.h>
+//struct S
+//{
+//	char c;
+//	int i;
+//	double d;
+//};
+//int main()
+//{
+//	//offsetof();
+//	printf("%d\n",offsetof(struct S,c))
+//	printf("%d\n", offsetof(struct S, i))
+//	printf("%d\n", offsetof(struct S, d))
+//	return 0;
+//}
+//位段成员必须是int unsigned /int
+//二进制位 
+//struct S
+//{
+//	int a : 2;//2 比特为
+//	int b : 8;
+//};
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(s));
+//	return 0;
+//}
+//struct S
+//{
+//	char a : 3;
+//	char b : 4;
+//		char c : 5;
+//		char d : 4;
+//};
+//int main()
+//{
+//	struct S s = { 0 };
+//	s.a = 10;
+//    s.b = 12;
+//    s.c = 3;
+//    s.d = 4;
+//	return 0;
+//}
+//枚举
+// 列举可能的值
+//enum Sex
+//{
+//	//枚举的可
+//	male,//0
+//   female,//1
+//  unknown//2
+//};
+//int main()
+//{
+//	enum Sex c = male;
+//	return 0;
+//}
+//联合（共用体）联合体
+union un
+{
+	char c;
+	int i;
+};
+int main()
+
+{
+	union un u;
+	printf("%d\n", sizeof(u));
+	printf("%d\n0", &(un.c));
+	return 0;
+}
+//判断电脑是大小端
+int main()
+{
+	int a = 0x11223344;
+	//低地址----->高地址
+	//讨论一个数据放在内存中的存放的字节顺序
+	//大小端字节序问题
+	return 0;
+}
+check_sys()
+{
+	//法二
+	union un
+	{
+		char c;
+		int i;
+	}u;
+	u.i = 1;
+	return u.c;
+	//int a = 1;
+	//返回1表示小端
+	//返回0表示大端
+	//return= *(char*)&a;
+}
+int main()
+{
+	int a = 1;
+	int ret = check_sys();
+	if (1 == ret)
+	{
+		printf("小端\n");
+
+	}
+	else
+	{
+		printf("大端\n");
+	}
+}
